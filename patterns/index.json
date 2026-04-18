@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-04-18T16:12:08.031Z",
+  "generated_at": "2026-04-18T17:05:21.549Z",
   "patterns": [
     {
       "slug": "text-reveals/per-letter-gsap",
@@ -156,6 +156,69 @@
         "swiss-editorial",
         "dark-academic",
         "organic-earth"
+      ]
+    },
+    {
+      "slug": "footers/editorial-outro",
+      "slot": "footer",
+      "frameworks": {
+        "sveltekit": {
+          "entry": "patterns/footers/sveltekit/editorial-outro/Footer.svelte",
+          "sha256": "17c9a9129467f115eb33dd93cdad1c117a26048b630c27cbbe606081e698c3fe",
+          "deps": []
+        },
+        "astro": {
+          "entry": "patterns/footers/astro/editorial-outro/Footer.astro",
+          "sha256": "17c9a9129467f115eb33dd93cdad1c117a26048b630c27cbbe606081e698c3fe",
+          "deps": []
+        }
+      },
+      "tokens_required": [
+        "palette.bg",
+        "palette.fg",
+        "palette.muted",
+        "palette.border",
+        "palette.accent",
+        "typography.display.family",
+        "typography.mono.family",
+        "motion.language"
+      ],
+      "motion_tags": [],
+      "mood_compat": [
+        "editorial-warm",
+        "swiss-editorial",
+        "dark-academic",
+        "organic-earth"
+      ]
+    },
+    {
+      "slug": "footers/minimal-mono",
+      "slot": "footer",
+      "frameworks": {
+        "sveltekit": {
+          "entry": "patterns/footers/sveltekit/minimal-mono/Footer.svelte",
+          "sha256": "de2c4cc62850e0129fd33e3865e0fb1ed8effb69f82c194caea872bb9dd67f9e",
+          "deps": []
+        },
+        "astro": {
+          "entry": "patterns/footers/astro/minimal-mono/Footer.astro",
+          "sha256": "de2c4cc62850e0129fd33e3865e0fb1ed8effb69f82c194caea872bb9dd67f9e",
+          "deps": []
+        }
+      },
+      "tokens_required": [
+        "palette.bg",
+        "palette.fg",
+        "palette.accent",
+        "palette.border",
+        "typography.mono.family",
+        "motion.language"
+      ],
+      "motion_tags": [],
+      "mood_compat": [
+        "brutalist-mono",
+        "y2k-glitch",
+        "swiss-editorial"
       ]
     },
     {

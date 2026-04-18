@@ -1,0 +1,10 @@
+{
+  "slug": "footers/editorial-outro",
+  "slot": "footer",
+  "entry": "Footer.astro",
+  "framework": "astro",
+  "tokens_required": ["palette.bg", "palette.fg", "palette.muted", "palette.border", "palette.accent", "typography.display.family", "typography.mono.family", "motion.language"],
+  "motion_tags": [],
+  "mood_compat": ["editorial-warm", "swiss-editorial", "dark-academic", "organic-earth"],
+  "deps": []
+}

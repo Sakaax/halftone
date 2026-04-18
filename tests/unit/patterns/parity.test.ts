@@ -17,7 +17,7 @@ function patternVariants(slotDir: string): Array<{ slug: string; sk: boolean; as
 }
 
 describe("cross-framework pattern parity", () => {
-  const slots = ["heroes", "text-reveals", "transitions", "scroll-triggers"];
+  const slots = ["heroes", "text-reveals", "transitions", "scroll-triggers", "footers"];
   for (const slot of slots) {
     test(`every ${slot} pattern has both sveltekit + astro`, () => {
       const variants = patternVariants(join("patterns", slot));

@@ -1,0 +1,10 @@
+{
+  "slug": "footers/minimal-mono",
+  "slot": "footer",
+  "entry": "Footer.astro",
+  "framework": "astro",
+  "tokens_required": ["palette.bg", "palette.fg", "palette.accent", "palette.border", "typography.mono.family", "motion.language"],
+  "motion_tags": [],
+  "mood_compat": ["brutalist-mono", "y2k-glitch", "swiss-editorial"],
+  "deps": []
+}
