@@ -1,0 +1,17 @@
+{
+  "name": "halftone-generated-site",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "4.3.0",
+    "gsap": "3.12.5",
+    "lenis": "1.0.42",
+    "motion": "10.18.0"
+  }
+}
