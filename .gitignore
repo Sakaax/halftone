@@ -1,0 +1,10 @@
+node_modules/
+dist/
+coverage/
+.DS_Store
+*.log
+.env
+.env.local
+/halftone/
+tests/visual/__diffs__/
+tests/visual/__actual__/
