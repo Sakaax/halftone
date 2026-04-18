@@ -1,0 +1,10 @@
+{
+  "name": "halftone",
+  "version": "0.1.0",
+  "description": "Design-director Claude Code plugin for expressive web design. No shadcn. No Inter. No purple gradients.",
+  "author": "Sakaax",
+  "license": "AGPL-3.0",
+  "skills": [".claude/skills/halftone"],
+  "entry": "src/index.ts",
+  "keywords": ["design", "web-design", "landing-page", "portfolio", "svelte", "astro", "craft"]
+}
