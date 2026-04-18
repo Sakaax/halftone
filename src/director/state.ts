@@ -2,6 +2,7 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
 import { join } from "path";
 import { StateSchema, type State } from "./schema";
 import type { Step } from "../types";
+import { StateGateViolationError } from "../types";
 
 const STATE_PATH = "halftone/.state.json";
 
@@ -52,4 +53,12 @@ export function transitionTo(projectRoot: string, next: Step, meta?: { chosen?: 
   };
   writeState(projectRoot, updated);
   return updated;
+}
+
+export function assertCanWriteCode(projectRoot: string, attempted: string): void {
+  const state = readState(projectRoot);
+  const allowed = ["locked", "scaffolded", "coded"];
+  if (!allowed.includes(state.current_step)) {
+    throw new StateGateViolationError(state.current_step, attempted);
+  }
 }
