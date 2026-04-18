@@ -1,0 +1,22 @@
+{
+  "slug": "soft-pastel-print",
+  "name": "Soft Pastel Print",
+  "description": "Muted risograph pastels. Hand-craft, editorial print vibe.",
+  "palette": {
+    "bg": "#FBF5EF",
+    "fg": "#2B2D42",
+    "accent": "#EF7674",
+    "muted": "#A6A1E2",
+    "border": "rgba(43,45,66,0.08)"
+  },
+  "typography_options": [
+    {
+      "display": { "family": "Mondwest", "weights": [400] },
+      "body": { "family": "Newsreader", "weights": [400] },
+      "mono": { "family": "JetBrains Mono", "weights": [400] }
+    }
+  ],
+  "fallback_assets_dir": "fallback-assets/soft-pastel-print",
+  "motion_affinity": ["text-reveal"],
+  "format_affinity": ["creative-portfolio"]
+}

@@ -1,0 +1,22 @@
+{
+  "slug": "dark-academic",
+  "name": "Dark Academic",
+  "description": "Deep forest, aged parchment, burgundy. Literary, patinated.",
+  "palette": {
+    "bg": "#1A1F1B",
+    "fg": "#E8DFC9",
+    "accent": "#8B1A1A",
+    "muted": "#6B5D47",
+    "border": "rgba(232,223,201,0.1)"
+  },
+  "typography_options": [
+    {
+      "display": { "family": "Fraunces", "weights": [400, 700] },
+      "body": { "family": "Newsreader", "weights": [400, 500] },
+      "mono": { "family": "JetBrains Mono", "weights": [400] }
+    }
+  ],
+  "fallback_assets_dir": "fallback-assets/dark-academic",
+  "motion_affinity": ["text-reveal", "scroll-pinned"],
+  "format_affinity": ["creative-portfolio", "studio-landing"]
+}

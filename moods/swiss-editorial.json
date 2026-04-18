@@ -1,0 +1,22 @@
+{
+  "slug": "swiss-editorial",
+  "name": "Swiss Editorial",
+  "description": "Off-white, ink black, saturated accent. Type-driven, grid-first.",
+  "palette": {
+    "bg": "#F5F3EE",
+    "fg": "#0A0A0A",
+    "accent": "#D90429",
+    "muted": "#6B7280",
+    "border": "rgba(10,10,10,0.1)"
+  },
+  "typography_options": [
+    {
+      "display": { "family": "GT America", "weights": [400, 700] },
+      "body": { "family": "Space Grotesk", "weights": [400, 500] },
+      "mono": { "family": "JetBrains Mono", "weights": [400] }
+    }
+  ],
+  "fallback_assets_dir": "fallback-assets/swiss-editorial",
+  "motion_affinity": ["scroll-pinned", "text-reveal"],
+  "format_affinity": ["saas-premium", "studio-landing"]
+}

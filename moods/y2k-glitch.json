@@ -1,0 +1,22 @@
+{
+  "slug": "y2k-glitch",
+  "name": "Y2K Glitch",
+  "description": "Chrome, electric blue, hot pink. Retro-tech, explicit brief only.",
+  "palette": {
+    "bg": "#0A0A1F",
+    "fg": "#F0F0FF",
+    "accent": "#FF006E",
+    "muted": "#8338EC",
+    "border": "rgba(240,240,255,0.12)"
+  },
+  "typography_options": [
+    {
+      "display": { "family": "PP Right Grotesk", "weights": [700] },
+      "body": { "family": "Space Grotesk", "weights": [400] },
+      "mono": { "family": "JetBrains Mono", "weights": [400, 500] }
+    }
+  ],
+  "fallback_assets_dir": "fallback-assets/y2k-glitch",
+  "motion_affinity": ["marquee", "text-reveal"],
+  "format_affinity": ["studio-landing", "creative-portfolio"]
+}

@@ -1,0 +1,22 @@
+{
+  "slug": "brutalist-mono",
+  "name": "Brutalist Mono",
+  "description": "Pure black/white + single accent. Hard edges, type-dominant.",
+  "palette": {
+    "bg": "#000000",
+    "fg": "#FFFFFF",
+    "accent": "#FF3B00",
+    "muted": "#B3B3B3",
+    "border": "rgba(255,255,255,0.12)"
+  },
+  "typography_options": [
+    {
+      "display": { "family": "PP Right Grotesk", "weights": [700] },
+      "body": { "family": "PP Neue Montreal", "weights": [400, 500] },
+      "mono": { "family": "JetBrains Mono", "weights": [400, 500] }
+    }
+  ],
+  "fallback_assets_dir": "fallback-assets/brutalist-mono",
+  "motion_affinity": ["text-reveal", "marquee"],
+  "format_affinity": ["studio-landing", "creative-portfolio"]
+}
