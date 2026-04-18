@@ -1,0 +1,19 @@
+{
+  "slug": "editorial-warm",
+  "name": "Editorial Warm",
+  "description": "Warm browns, creams, terracotta.",
+  "palette": {
+    "bg": "#0F0E0C", "fg": "#E8E4DE", "accent": "#D4622A",
+    "muted": "#8B7355", "border": "rgba(232,228,222,0.08)"
+  },
+  "typography_options": [
+    {
+      "display": { "family": "PP Editorial New", "weights": [400, 700] },
+      "body":    { "family": "Space Grotesk", "weights": [400] },
+      "mono":    { "family": "JetBrains Mono", "weights": [400] }
+    }
+  ],
+  "fallback_assets_dir": "fallback-assets/editorial-warm",
+  "motion_affinity": ["text-reveal"],
+  "format_affinity": ["studio-landing"]
+}
