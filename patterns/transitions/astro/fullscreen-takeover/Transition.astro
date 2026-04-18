@@ -1,0 +1,41 @@
+---
+// Fullscreen page transition — colored overlay slides up on mount.
+---
+
+<div class="ht-transition" aria-hidden="true"></div>
+
+<script is:inline>
+  (function () {
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    function play() {
+      var el = document.querySelector(".ht-transition");
+      if (el) el.classList.add("ht-transition-played");
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", play);
+    } else {
+      play();
+    }
+  })();
+</script>
+
+<style>
+  .ht-transition {
+    position: fixed;
+    inset: 0;
+    background: var(--accent);
+    transform: translateY(0);
+    pointer-events: none;
+    z-index: 9999;
+  }
+  .ht-transition.ht-transition-played {
+    animation: ht-transition-out 800ms cubic-bezier(0.76, 0, 0.24, 1) forwards;
+  }
+  @keyframes ht-transition-out {
+    from { transform: translateY(0); }
+    to   { transform: translateY(-100%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ht-transition { display: none; }
+  }
+</style>

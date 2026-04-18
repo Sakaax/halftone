@@ -17,7 +17,7 @@ function patternVariants(slotDir: string): Array<{ slug: string; sk: boolean; as
 }
 
 describe("cross-framework pattern parity", () => {
-  const slots = ["heroes", "text-reveals"];
+  const slots = ["heroes", "text-reveals", "transitions", "scroll-triggers"];
   for (const slot of slots) {
     test(`every ${slot} pattern has both sveltekit + astro`, () => {
       const variants = patternVariants(join("patterns", slot));
@@ -27,4 +27,9 @@ describe("cross-framework pattern parity", () => {
       }
     });
   }
+
+  test("cursors/magnetic-hover exists in both frameworks", () => {
+    expect(existsSync("patterns/cursors/sveltekit/magnetic-hover")).toBe(true);
+    expect(existsSync("patterns/cursors/astro/magnetic-hover")).toBe(true);
+  });
 });

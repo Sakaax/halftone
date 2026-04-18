@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-04-18T15:42:17.572Z",
+  "generated_at": "2026-04-18T16:12:08.031Z",
   "patterns": [
     {
       "slug": "text-reveals/per-letter-gsap",
@@ -68,6 +68,37 @@
       ]
     },
     {
+      "slug": "scroll-triggers/pinned-reveal",
+      "slot": "primary-motion",
+      "frameworks": {
+        "sveltekit": {
+          "entry": "patterns/scroll-triggers/sveltekit/pinned-reveal/ScrollTrigger.svelte",
+          "sha256": "f7d9bc130003fb0b0bfa2e383fd6839ada20720497917e80fa5adb0fa41a40a4",
+          "deps": []
+        },
+        "astro": {
+          "entry": "patterns/scroll-triggers/astro/pinned-reveal/ScrollTrigger.astro",
+          "sha256": "0bd14bcc86df311fae20bd00e9a789bdcf5070d98703855c9f079d1cb94291d5",
+          "deps": []
+        }
+      },
+      "tokens_required": [
+        "palette.fg",
+        "typography.display.family",
+        "motion.language"
+      ],
+      "motion_tags": [
+        "scroll-pinned",
+        "text-reveal"
+      ],
+      "mood_compat": [
+        "editorial-warm",
+        "swiss-editorial",
+        "dark-academic",
+        "organic-earth"
+      ]
+    },
+    {
       "slug": "heroes/brutalist-headline",
       "slot": "hero",
       "frameworks": {
@@ -125,6 +156,65 @@
         "swiss-editorial",
         "dark-academic",
         "organic-earth"
+      ]
+    },
+    {
+      "slug": "transitions/fullscreen-takeover",
+      "slot": "transition",
+      "frameworks": {
+        "sveltekit": {
+          "entry": "patterns/transitions/sveltekit/fullscreen-takeover/Transition.svelte",
+          "sha256": "2d00d23d21ec83cdbe7de49554ad695a1ef4e0e2f6dade626c4d41210cd18760",
+          "deps": []
+        },
+        "astro": {
+          "entry": "patterns/transitions/astro/fullscreen-takeover/Transition.astro",
+          "sha256": "a6d9a6e902e3c8852eef704bff4ac966538e8f3852fc317ed659a401395f5278",
+          "deps": []
+        }
+      },
+      "tokens_required": [
+        "palette.accent"
+      ],
+      "motion_tags": [
+        "transition"
+      ],
+      "mood_compat": [
+        "editorial-warm",
+        "swiss-editorial",
+        "dark-academic",
+        "organic-earth",
+        "brutalist-mono",
+        "y2k-glitch"
+      ]
+    },
+    {
+      "slug": "cursors/magnetic-hover",
+      "slot": "cursor",
+      "frameworks": {
+        "sveltekit": {
+          "entry": "patterns/cursors/sveltekit/magnetic-hover/Cursor.svelte",
+          "sha256": "60b2e15a08dd235cc28d0fe938231f16d5d6bd374c18f728e7cea1f822020165",
+          "deps": []
+        },
+        "astro": {
+          "entry": "patterns/cursors/astro/magnetic-hover/Cursor.astro",
+          "sha256": "cc8fca318382b75e6277542b9388c41ad3ce49100a50df2b3105ba90a72d1c0f",
+          "deps": []
+        }
+      },
+      "tokens_required": [
+        "palette.accent"
+      ],
+      "motion_tags": [
+        "cursor"
+      ],
+      "mood_compat": [
+        "editorial-warm",
+        "swiss-editorial",
+        "dark-academic",
+        "organic-earth",
+        "y2k-glitch"
       ]
     }
   ]

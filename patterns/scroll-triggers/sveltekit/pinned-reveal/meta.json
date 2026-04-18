@@ -1,0 +1,10 @@
+{
+  "slug": "scroll-triggers/pinned-reveal",
+  "slot": "primary-motion",
+  "entry": "ScrollTrigger.svelte",
+  "framework": "sveltekit",
+  "tokens_required": ["palette.fg", "typography.display.family", "motion.language"],
+  "motion_tags": ["scroll-pinned", "text-reveal"],
+  "mood_compat": ["editorial-warm", "swiss-editorial", "dark-academic", "organic-earth"],
+  "deps": []
+}

@@ -1,0 +1,10 @@
+{
+  "slug": "cursors/magnetic-hover",
+  "slot": "cursor",
+  "entry": "Cursor.astro",
+  "framework": "astro",
+  "tokens_required": ["palette.accent"],
+  "motion_tags": ["cursor"],
+  "mood_compat": ["editorial-warm", "swiss-editorial", "dark-academic", "organic-earth", "y2k-glitch"],
+  "deps": []
+}

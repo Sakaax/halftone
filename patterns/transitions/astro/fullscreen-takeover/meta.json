@@ -1,0 +1,10 @@
+{
+  "slug": "transitions/fullscreen-takeover",
+  "slot": "transition",
+  "entry": "Transition.astro",
+  "framework": "astro",
+  "tokens_required": ["palette.accent"],
+  "motion_tags": ["transition"],
+  "mood_compat": ["editorial-warm", "swiss-editorial", "dark-academic", "organic-earth", "brutalist-mono", "y2k-glitch"],
+  "deps": []
+}
