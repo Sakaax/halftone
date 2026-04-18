@@ -1,0 +1,38 @@
+---
+const text = "{{tokens.motion.language}}";
+const letters = text.split("");
+---
+
+<div class="ht-text-reveal" data-halftone-reveal>
+  <h2>
+    {letters.map((ch) => <span class="ht-letter">{ch === " " ? "\u00A0" : ch}</span>)}
+  </h2>
+</div>
+
+<script>
+  import { gsap } from "gsap";
+  if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const wrap = document.querySelector<HTMLDivElement>("[data-halftone-reveal]");
+    if (wrap) {
+      const letters = wrap.querySelectorAll<HTMLSpanElement>(".ht-letter");
+      gsap.from(letters, {
+        y: 80, opacity: 0, duration: 0.8, stagger: 0.03,
+        ease: "cubic-bezier(0.76, 0, 0.24, 1)",
+      });
+    }
+  }
+</script>
+
+<style>
+  .ht-text-reveal h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 8vw, 6rem);
+    line-height: 1.1;
+    color: var(--fg);
+    overflow: hidden;
+  }
+  .ht-text-reveal .ht-letter {
+    display: inline-block;
+    will-change: transform, opacity;
+  }
+</style>

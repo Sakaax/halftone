@@ -1,0 +1,10 @@
+{
+  "slug": "heroes/brutalist-headline",
+  "slot": "hero",
+  "entry": "Hero.svelte",
+  "framework": "sveltekit",
+  "tokens_required": ["palette.bg", "palette.fg", "palette.accent", "typography.mono.family", "motion.language"],
+  "motion_tags": ["text-reveal"],
+  "mood_compat": ["brutalist-mono", "swiss-editorial"],
+  "deps": []
+}

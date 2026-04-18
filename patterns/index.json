@@ -1,0 +1,131 @@
+{
+  "version": 1,
+  "generated_at": "2026-04-18T15:42:17.572Z",
+  "patterns": [
+    {
+      "slug": "text-reveals/per-letter-gsap",
+      "slot": "primary-motion",
+      "frameworks": {
+        "sveltekit": {
+          "entry": "patterns/text-reveals/sveltekit/per-letter-gsap/Motion.svelte",
+          "sha256": "e6cc26f192aac204b99218ec75ba0b19a6b0be2a61c98afd40881ba7bbb22721",
+          "deps": [
+            "gsap"
+          ]
+        },
+        "astro": {
+          "entry": "patterns/text-reveals/astro/per-letter-gsap/Motion.astro",
+          "sha256": "d08c7a550f936ee3521b309a11d9e2fced96bee3b5a09174c0b37df5d3a3bde4",
+          "deps": [
+            "gsap"
+          ]
+        }
+      },
+      "tokens_required": [
+        "palette.fg",
+        "typography.display.family",
+        "motion.language"
+      ],
+      "motion_tags": [
+        "text-reveal"
+      ],
+      "mood_compat": [
+        "editorial-warm",
+        "swiss-editorial",
+        "dark-academic",
+        "organic-earth",
+        "brutalist-mono"
+      ]
+    },
+    {
+      "slug": "text-reveals/marquee-infinite",
+      "slot": "primary-motion",
+      "frameworks": {
+        "sveltekit": {
+          "entry": "patterns/text-reveals/sveltekit/marquee-infinite/Motion.svelte",
+          "sha256": "da3756c57221f4eecf92aa9a0cb1b8a08bb6ba84f7f3f9c12f00f03904ab60df",
+          "deps": []
+        },
+        "astro": {
+          "entry": "patterns/text-reveals/astro/marquee-infinite/Motion.astro",
+          "sha256": "890d7ab67c6fca55addccec330ea200e45142df4cf9a6b65e8b3fd14a35aa4ee",
+          "deps": []
+        }
+      },
+      "tokens_required": [
+        "palette.fg",
+        "palette.border",
+        "typography.display.family",
+        "motion.language"
+      ],
+      "motion_tags": [
+        "marquee"
+      ],
+      "mood_compat": [
+        "brutalist-mono",
+        "y2k-glitch",
+        "swiss-editorial"
+      ]
+    },
+    {
+      "slug": "heroes/brutalist-headline",
+      "slot": "hero",
+      "frameworks": {
+        "sveltekit": {
+          "entry": "patterns/heroes/sveltekit/brutalist-headline/Hero.svelte",
+          "sha256": "288f8e1b20b6b6cfb769e619e3b2ddd90d38a1329d002af49f8fb6ae4a063312",
+          "deps": []
+        },
+        "astro": {
+          "entry": "patterns/heroes/astro/brutalist-headline/Hero.astro",
+          "sha256": "c5007954e626fdd72c685471c3e22f9cdd4581a16d9b887e29882688dbd2f856",
+          "deps": []
+        }
+      },
+      "tokens_required": [
+        "palette.bg",
+        "palette.fg",
+        "palette.accent",
+        "typography.mono.family",
+        "motion.language"
+      ],
+      "motion_tags": [
+        "text-reveal"
+      ],
+      "mood_compat": [
+        "brutalist-mono",
+        "swiss-editorial"
+      ]
+    },
+    {
+      "slug": "heroes/asymmetric-editorial",
+      "slot": "hero",
+      "frameworks": {
+        "sveltekit": {
+          "entry": "patterns/heroes/sveltekit/asymmetric-editorial/Hero.svelte",
+          "sha256": "0fcd4e7ef49519f56eb0fb96e0441675d000a98ff0f8ed3f7ffe38520e3028a9",
+          "deps": []
+        },
+        "astro": {
+          "entry": "patterns/heroes/astro/asymmetric-editorial/Hero.astro",
+          "sha256": "8bb1b5ad50b079069c8c96f4889203bcae61382e99f4c0cf8a1caa6f7f87ba06",
+          "deps": []
+        }
+      },
+      "tokens_required": [
+        "palette.bg",
+        "palette.fg",
+        "typography.display.family"
+      ],
+      "motion_tags": [
+        "scroll-pinned"
+      ],
+      "mood_compat": [
+        "editorial-warm",
+        "swiss-editorial",
+        "dark-academic",
+        "organic-earth"
+      ]
+    }
+  ]
+}

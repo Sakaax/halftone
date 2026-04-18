@@ -1,0 +1,10 @@
+{
+  "slug": "text-reveals/marquee-infinite",
+  "slot": "primary-motion",
+  "entry": "Motion.astro",
+  "framework": "astro",
+  "tokens_required": ["palette.fg", "palette.border", "typography.display.family", "motion.language"],
+  "motion_tags": ["marquee"],
+  "mood_compat": ["brutalist-mono", "y2k-glitch", "swiss-editorial"],
+  "deps": []
+}

@@ -1,0 +1,35 @@
+<div class="ht-marquee" aria-hidden="true">
+  <div class="ht-marquee-track">
+    <span>{{tokens.motion.language}}</span>
+    <span aria-hidden="true">·</span>
+    <span>{{tokens.motion.language}}</span>
+    <span aria-hidden="true">·</span>
+    <span>{{tokens.motion.language}}</span>
+    <span aria-hidden="true">·</span>
+  </div>
+</div>
+
+<style>
+  .ht-marquee {
+    overflow: hidden;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 1.5rem 0;
+  }
+  .ht-marquee-track {
+    display: flex;
+    gap: 2rem;
+    white-space: nowrap;
+    animation: ht-marquee 40s linear infinite;
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    color: var(--fg);
+  }
+  @keyframes ht-marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-33.333%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ht-marquee-track { animation: none; }
+  }
+</style>

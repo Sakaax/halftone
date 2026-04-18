@@ -1,0 +1,10 @@
+{
+  "slug": "heroes/asymmetric-editorial",
+  "slot": "hero",
+  "entry": "Hero.astro",
+  "framework": "astro",
+  "tokens_required": ["palette.bg", "palette.fg", "typography.display.family"],
+  "motion_tags": ["scroll-pinned"],
+  "mood_compat": ["editorial-warm", "swiss-editorial", "dark-academic", "organic-earth"],
+  "deps": []
+}

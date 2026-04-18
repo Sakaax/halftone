@@ -1,0 +1,10 @@
+{
+  "slug": "text-reveals/per-letter-gsap",
+  "slot": "primary-motion",
+  "entry": "Motion.svelte",
+  "framework": "sveltekit",
+  "tokens_required": ["palette.fg", "typography.display.family", "motion.language"],
+  "motion_tags": ["text-reveal"],
+  "mood_compat": ["editorial-warm", "swiss-editorial", "dark-academic", "organic-earth", "brutalist-mono"],
+  "deps": ["gsap"]
+}
