@@ -1,5 +1,5 @@
 import { describe, expect, test } from "bun:test";
-import { StateSchema, BriefSchema } from "../../../src/direction/schema";
+import { StateSchema, BriefSchema } from "../../../src/director/schema";
 
 describe("StateSchema", () => {
   test("accepts full state", () => {
