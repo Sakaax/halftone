@@ -15,6 +15,29 @@ dependencies: fonts/bundle, fonts/fontface, fonts/paid-stub
 - ALWAYS use `clamp()` for type scale — never fixed px breakpoints.
 - ALWAYS self-host fonts — no Google Fonts hotlinking in production.
 
+## DISPLAY TYPE SIZE LIMITS (hard caps)
+
+Readability > drama. Display type must fit the viewport with breathing room at every screen size. A hero headline that overflows the screen at 1920px or 4K is broken, not bold.
+
+**Absolute maxes** — never exceed these in `clamp(min, scale, MAX)`:
+
+| Role | Max (rem) | Max vw multiplier | Example |
+|---|---|---|---|
+| Hero wordmark (single word, single line) | **11rem** | **14vw** | `clamp(3.5rem, 14vw, 11rem)` |
+| Section headline (h2) | **4rem** | **5vw + 0.5rem** | `clamp(1.875rem, 3.5vw + 0.5rem, 3.75rem)` |
+| Sub-headline (h3) | **2.75rem** | **3vw** | `clamp(1.5rem, 2vw + 0.5rem, 2.75rem)` |
+| Pullquote / manifesto quote | **2.25rem** | **2vw** | `clamp(1.25rem, 1.8vw + 0.5rem, 2.125rem)` |
+| Body lead / intro paragraph | **1.5rem** | **1vw + 0.5rem** | `clamp(1.1rem, 0.5vw + 0.95rem, 1.5rem)` |
+
+**Forbidden patterns** (auto-warn during generation):
+
+- `clamp(..., ..vw, Xrem)` where vw multiplier > 15 → hero overflows on large screens
+- `clamp(..., ..., Xrem)` where max > 12rem for any page-level display → too big, full-screen cover
+- `font-size: NNpx` on display type — use `clamp()` always
+- Hero type with `line-height > 1.0` — display types breathe below, not inside
+
+**Rule of thumb**: if the hero word takes more than ~70% of the viewport height at any width, it's too big. Display type should dominate, not suffocate.
+
 ## STEPS
 
 ### 1. Write @font-face
