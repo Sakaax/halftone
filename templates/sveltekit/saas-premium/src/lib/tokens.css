@@ -1,0 +1,26 @@
+:root {
+  --bg: {{tokens.palette.bg}};
+  --fg: {{tokens.palette.fg}};
+  --accent: {{tokens.palette.accent}};
+  --muted: {{tokens.palette.muted}};
+  --border: {{tokens.palette.border}};
+
+  --font-display: "{{tokens.typography.display.family}}", serif;
+  --font-body: "{{tokens.typography.body.family}}", sans-serif;
+  --font-mono: "{{tokens.typography.mono.family}}", monospace;
+
+  --weight-display: {{tokens.typography.display.weight}};
+  --weight-body: {{tokens.typography.body.weight}};
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+  letter-spacing: -0.02em;
+}
