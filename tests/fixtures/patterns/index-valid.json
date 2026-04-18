@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "generated_at": "2026-04-19T00:00:00Z",
+  "patterns": [
+    {
+      "slug": "heroes/sample",
+      "slot": "hero",
+      "frameworks": {
+        "sveltekit": {
+          "entry": "tests/fixtures/patterns/heroes/sveltekit/sample/Hero.svelte",
+          "sha256": "1c6e17b9022ce03f757eea9a66f23a6eaef7e611dd93c7f950279e6c93fd2b2f",
+          "deps": []
+        },
+        "astro": {
+          "entry": "tests/fixtures/patterns/heroes/astro/sample/Hero.astro",
+          "sha256": "a6c9f7086c272c40f065e5f58ae1e9f7d334b38db8e9ff936d601a11dd7a0903",
+          "deps": []
+        }
+      },
+      "tokens_required": [],
+      "motion_tags": [],
+      "mood_compat": [
+        "editorial-warm"
+      ]
+    }
+  ]
+}
