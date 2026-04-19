@@ -1,10 +1,9 @@
 {
   "name": "halftone",
+  "description": "Design-director Claude Code plugin for expressive web design. Generates SvelteKit or Astro sites with hardcoded anti-AI-slop rules.",
   "version": "0.1.0",
-  "description": "Design-director Claude Code plugin for expressive web design. No shadcn. No Inter. No purple gradients.",
-  "author": "Sakaax",
+  "author": { "name": "Sakaax" },
   "license": "AGPL-3.0",
-  "skills": [".claude/skills/halftone"],
-  "entry": "src/index.ts",
-  "keywords": ["design", "web-design", "landing-page", "portfolio", "svelte", "astro", "craft"]
+  "keywords": ["design", "web-design", "landing-page", "portfolio", "sveltekit", "astro", "anti-ai-slop", "craft"],
+  "skills": ["./.claude/skills/halftone"]
 }

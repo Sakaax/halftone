@@ -1,7 +1,21 @@
 {
-  "display_name": "Halftone",
-  "tagline": "Award-tier expressive web design, no AI slop.",
-  "category": "design",
-  "screenshots": [],
-  "docs_url": "https://halftone.sakaax.com"
+  "name": "halftone",
+  "id": "halftone",
+  "owner": { "name": "Sakaax" },
+  "metadata": {
+    "description": "Design-director plugin for award-tier expressive web design. SvelteKit + Astro, anti-AI-slop hardcoded, WCAG 2.1 AA.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "halftone",
+      "source": "./",
+      "description": "The Claude Code plugin for award-tier expressive web design. No shadcn. No Inter. No purple gradients.",
+      "version": "0.1.0",
+      "author": { "name": "Sakaax" },
+      "keywords": ["design", "web-design", "sveltekit", "astro", "anti-ai-slop", "craft"],
+      "category": "design",
+      "strict": false
+    }
+  ]
 }
