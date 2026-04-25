@@ -1,12 +1,21 @@
 ---
 name: halftone-moodboard
-purpose: Generate 6-image moodboard (img-pilot) or use fallback SVGs
+deprecated: true
+deprecated_in: v0.2.0
+replaced_by: internal-skills/preview/SKILL.md
+purpose: (deprecated) Generate 6-image moodboard (img-pilot) or use fallback SVGs
 inputs: chosen direction, moods/<slug>.json
 outputs: halftone/moodboard/*.{png,svg}, state transitions to moodboard
 dependencies: integrations/img-pilot, fallback-assets/<mood>/
 ---
 
-# Halftone — Moodboard phase
+> **DEPRECATED in v0.2.** The live HTML preview (`internal-skills/preview/SKILL.md`)
+> replaces the moodboard step with a stronger signal — full visual + motion design on
+> `localhost:3737` instead of 6 static images. The 42 fallback SVGs in
+> `fallback-assets/` and the moods catalog in `moods/` remain available for future
+> pattern extensions but are no longer part of the default flow.
+
+# Halftone — Moodboard phase (v0.1, archived)
 
 ## DETECTION
 

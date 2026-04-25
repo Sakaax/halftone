@@ -17,4 +17,16 @@ describe("internal-skills/brief", () => {
     const raw = readFileSync(PATH, "utf-8");
     expect(raw).toMatch(/MAX 3 questions/i);
   });
+
+  test("uses the v0.2 question set (feeling / loved site / non-negotiable)", () => {
+    const raw = readFileSync(PATH, "utf-8");
+    expect(raw).toMatch(/Feeling/i);
+    expect(raw).toMatch(/Loved site/i);
+    expect(raw).toMatch(/Non-negotiable/i);
+  });
+
+  test("frontmatter declares schema version 2", () => {
+    const raw = readFileSync(PATH, "utf-8");
+    expect(raw).toMatch(/version:\s*2/);
+  });
 });
