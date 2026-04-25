@@ -10,22 +10,24 @@ import { bundleFonts } from "../../src/fonts/bundle";
 import { generateFontFaceCSS } from "../../src/fonts/fontface";
 import type { Direction } from "../../src/direction/schema";
 
-describe("end-to-end fallback workflow", () => {
-  test("full brief → directions → fallback moodboard → lock → scaffold flow", async () => {
+describe("end-to-end v0.2 workflow (preview-led)", () => {
+  test("init → brief → directions → preview → framework_chosen → converted → fonts bundled", async () => {
     const project = mkdtempSync(join(tmpdir(), "halftone-e2e-"));
 
     // 1. Init
     ensureGitignore(project);
     initState(project);
     expect(existsSync(join(project, "halftone/.state.json"))).toBe(true);
-    expect(readFileSync(join(project, ".gitignore"), "utf-8")).toContain("/halftone/");
+    const gi = readFileSync(join(project, ".gitignore"), "utf-8");
+    expect(gi).toContain("/halftone/preview/");
 
-    // 2. Simulate brief phase transitions
+    // 2. v0.2 step transitions
     transitionTo(project, "brief");
     transitionTo(project, "directions", { chosen: 1 });
-    transitionTo(project, "moodboard");
+    transitionTo(project, "preview");
+    transitionTo(project, "framework_chosen");
 
-    // 3. Lock direction (write direction.md)
+    // 3. Persist chosen direction (no moodboard section in v0.2)
     const direction: Direction = {
       version: 1,
       mood: "editorial-warm",
@@ -48,17 +50,13 @@ describe("end-to-end fallback workflow", () => {
           footer: "footers/editorial-outro@sha256:ghi",
         },
       },
-      moodboard: {
-        source: "fallback",
-        paths: ["1","2","3","4","5","6"].map((n) => `halftone/moodboard/${n}.svg`),
-      },
       locked_at: new Date().toISOString(),
     };
     writeDirection(join(project, "halftone/direction.md"), direction, "# Direction\n\nRationale.");
-    transitionTo(project, "locked");
+    transitionTo(project, "converted");
 
     const state = readState(project);
-    expect(state.current_step).toBe("locked");
+    expect(state.current_step).toBe("converted");
 
     // 4. Bundle fonts (sveltekit destination)
     bundleFonts({
@@ -69,7 +67,6 @@ describe("end-to-end fallback workflow", () => {
         { family: "Space Grotesk", weight: 400 },
       ],
     });
-    // Font files are stub .woff2 at this phase — bundle just copies them.
     expect(existsSync(join(project, "static/fonts/newsreader/newsreader-400.woff2"))).toBe(true);
 
     // 5. Generate @font-face CSS
@@ -80,7 +77,6 @@ describe("end-to-end fallback workflow", () => {
     expect(css).toContain("@font-face");
     expect(css).toContain("Newsreader");
 
-    // Cleanup
     rmSync(project, { recursive: true, force: true });
   });
 });

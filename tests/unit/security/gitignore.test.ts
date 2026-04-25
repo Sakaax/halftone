@@ -11,7 +11,8 @@ describe("ensureGitignore", () => {
     const content = readFileSync(join(dir, ".gitignore"), "utf-8");
     expect(content).toContain("/halftone/.state.json");
     expect(content).toContain("/halftone/.keys");
-    expect(content).toContain("/halftone/moodboard/");
+    expect(content).toContain("/halftone/preview/");
+    expect(content).toContain("/halftone/.preview-pid");
     rmSync(dir, { recursive: true, force: true });
   });
 

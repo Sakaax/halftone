@@ -1,8 +1,8 @@
 import { z } from "zod";
 
 const StepEnum = z.enum([
-  "init", "brief", "directions", "moodboard",
-  "locked", "scaffolded", "coded",
+  "init", "brief", "directions", "preview",
+  "framework_chosen", "converted", "coded",
 ]);
 
 export const StateSchema = z.object({
@@ -15,23 +15,21 @@ export const StateSchema = z.object({
     })
   ),
   framework_override: z.enum(["sveltekit", "astro"]).nullable(),
-  moodboard_source: z.enum(["img-pilot", "fallback"]).nullable(),
+  chosen_direction: z.number().int().min(1).max(3).nullable(),
+  framework_choice: z.enum(["sveltekit", "astro"]).nullable(),
 });
 
 export type State = z.infer<typeof StateSchema>;
 
 export const BriefSchema = z.object({
-  version: z.literal(1),
+  version: z.literal(2),
   created_at: z.string().datetime(),
-  audience: z.string().min(1),
-  site_goal: z.string().min(1),
-  mood_preference: z.union([
-    z.enum([
-      "editorial-warm", "brutalist-mono", "swiss-editorial",
-      "organic-earth", "y2k-glitch", "dark-academic", "soft-pastel-print",
-    ]),
-    z.literal("surprise-me"),
-  ]),
+  feeling: z.string().min(1).max(40),
+  loved_site: z.object({
+    url: z.string().url(),
+    why: z.string().min(1).max(40),
+  }),
+  non_negotiable: z.string().min(1).max(200),
   format: z.enum(["studio-landing", "saas-premium", "creative-portfolio"]),
   has_existing_ux_brief: z.boolean(),
   has_existing_brand_kit: z.boolean(),

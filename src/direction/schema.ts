@@ -49,7 +49,7 @@ export const DirectionSchema = z.object({
     language: z.string().min(1),
     patterns: MotionPatternsSchema,
   }),
-  moodboard: MoodboardSchema,
+  moodboard: MoodboardSchema.optional(),
   locked_at: z.string().datetime(),
 });
 

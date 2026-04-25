@@ -15,7 +15,8 @@ export function initState(projectRoot: string): State {
     current_step: "init",
     history: [],
     framework_override: null,
-    moodboard_source: null,
+    chosen_direction: null,
+    framework_choice: null,
   };
   writeState(projectRoot, initial);
   return initial;
@@ -37,7 +38,11 @@ export function writeState(projectRoot: string, state: State): void {
   writeFileSync(path, JSON.stringify(state, null, 2), "utf-8");
 }
 
-export function transitionTo(projectRoot: string, next: Step, meta?: { chosen?: number }): State {
+export function transitionTo(
+  projectRoot: string,
+  next: Step,
+  meta?: { chosen?: number; framework?: "sveltekit" | "astro" }
+): State {
   const current = readState(projectRoot);
   const updated: State = {
     ...current,
@@ -50,6 +55,8 @@ export function transitionTo(projectRoot: string, next: Step, meta?: { chosen?: 
         ...(meta?.chosen !== undefined ? { chosen: meta.chosen } : {}),
       },
     ],
+    ...(meta?.chosen !== undefined ? { chosen_direction: meta.chosen } : {}),
+    ...(meta?.framework !== undefined ? { framework_choice: meta.framework } : {}),
   };
   writeState(projectRoot, updated);
   return updated;
@@ -57,7 +64,7 @@ export function transitionTo(projectRoot: string, next: Step, meta?: { chosen?: 
 
 export function assertCanWriteCode(projectRoot: string, attempted: string): void {
   const state = readState(projectRoot);
-  const allowed = ["locked", "scaffolded", "coded"];
+  const allowed = ["framework_chosen", "converted", "coded"];
   if (!allowed.includes(state.current_step)) {
     throw new StateGateViolationError(state.current_step, attempted);
   }

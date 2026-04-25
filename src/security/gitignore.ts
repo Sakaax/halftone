@@ -5,9 +5,10 @@ const HALFTONE_ENTRIES = [
   "",
   "# Halftone",
   "/halftone/.state.json",
+  "/halftone/.preview-pid",
   "/halftone/.keys",
   "/halftone/.env",
-  "/halftone/moodboard/",
+  "/halftone/preview/",
   "/halftone/audit/",
   "halftone/**/.secrets*",
 ];

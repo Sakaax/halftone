@@ -17,14 +17,12 @@ export type Step =
   | "init"
   | "brief"
   | "directions"
-  | "moodboard"
-  | "locked"
-  | "scaffolded"
+  | "preview"
+  | "framework_chosen"
+  | "converted"
   | "coded";
 
 export type PatternSlot = "hero" | "text-reveal" | "transition" | "cursor" | "scroll-trigger" | "footer";
-
-export type MoodboardSource = "img-pilot" | "fallback";
 
 export type AuditResult = "pass" | "warn" | "fail";
 

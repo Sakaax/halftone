@@ -15,27 +15,45 @@ afterEach(() => {
   rmSync(dir, { recursive: true, force: true });
 });
 
-describe("assertCanWriteCode", () => {
+describe("assertCanWriteCode (v0.2 gates)", () => {
   test("throws when state is init", () => {
     initState(dir);
-    expect(() => assertCanWriteCode(dir, "scaffold")).toThrow(StateGateViolationError);
+    expect(() => assertCanWriteCode(dir, "convert")).toThrow(StateGateViolationError);
   });
   test("throws when state is brief", () => {
     const s = initState(dir);
     s.current_step = "brief";
     writeState(dir, s);
-    expect(() => assertCanWriteCode(dir, "scaffold")).toThrow();
+    expect(() => assertCanWriteCode(dir, "convert")).toThrow();
   });
-  test("passes when state is locked", () => {
+  test("throws when state is directions", () => {
     const s = initState(dir);
-    s.current_step = "locked";
+    s.current_step = "directions";
     writeState(dir, s);
-    expect(() => assertCanWriteCode(dir, "scaffold")).not.toThrow();
+    expect(() => assertCanWriteCode(dir, "convert")).toThrow();
   });
-  test("passes when state is scaffolded", () => {
+  test("throws when state is preview (still iterating)", () => {
     const s = initState(dir);
-    s.current_step = "scaffolded";
+    s.current_step = "preview";
+    writeState(dir, s);
+    expect(() => assertCanWriteCode(dir, "convert")).toThrow();
+  });
+  test("passes when state is framework_chosen", () => {
+    const s = initState(dir);
+    s.current_step = "framework_chosen";
+    writeState(dir, s);
+    expect(() => assertCanWriteCode(dir, "convert")).not.toThrow();
+  });
+  test("passes when state is converted", () => {
+    const s = initState(dir);
+    s.current_step = "converted";
     writeState(dir, s);
     expect(() => assertCanWriteCode(dir, "code-fill")).not.toThrow();
+  });
+  test("passes when state is coded", () => {
+    const s = initState(dir);
+    s.current_step = "coded";
+    writeState(dir, s);
+    expect(() => assertCanWriteCode(dir, "audit")).not.toThrow();
   });
 });

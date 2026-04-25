@@ -22,8 +22,8 @@ describe("core types", () => {
     const slots: SlotName[] = ["hero", "primary-motion", "footer", "cursor", "transition"];
     expect(slots).toContain("hero");
   });
-  test("Step has 7 values", () => {
-    const steps: Step[] = ["init", "brief", "directions", "moodboard", "locked", "scaffolded", "coded"];
+  test("Step has 7 values (v0.2 flow)", () => {
+    const steps: Step[] = ["init", "brief", "directions", "preview", "framework_chosen", "converted", "coded"];
     expect(steps).toHaveLength(7);
   });
 });
