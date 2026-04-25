@@ -9,7 +9,12 @@ export interface Slot {
   raw: string;
 }
 
-const SLOT_RE = /<!--\s*slot:([a-z0-9-]+)\s*-->/g;
+// Slot markers come in two flavors:
+//   v0.1: <!-- slot:hero -->                       (HTML comment)
+//   v0.2: <section data-slot="hero">...</section>  (HTML attribute)
+// Both are detected so templates and v0.1-style preview output stay supported.
+const SLOT_COMMENT_RE = /<!--\s*slot:([a-z0-9-]+)\s*-->/g;
+const SLOT_ATTR_RE = /\bdata-slot\s*=\s*["']([a-z0-9-]+)["']/g;
 const EXTS = new Set([".svelte", ".astro", ".html"]);
 
 function walk(dir: string): string[] {
@@ -37,16 +42,17 @@ export function detectSlots(templatePath: string): Slot[] {
     const lines = content.split("\n");
     for (let i = 0; i < lines.length; i++) {
       const line = lines[i]!;
-      const re = new RegExp(SLOT_RE.source, "g");
-      let match: RegExpExecArray | null;
-      while ((match = re.exec(line)) !== null) {
-        slots.push({
-          name: match[1]!,
-          file,
-          line: i + 1,
-          column: match.index + 1,
-          raw: match[0],
-        });
+      for (const source of [SLOT_COMMENT_RE.source, SLOT_ATTR_RE.source]) {
+        const re = new RegExp(source, "g");
+        for (const match of line.matchAll(re)) {
+          slots.push({
+            name: match[1]!,
+            file,
+            line: i + 1,
+            column: (match.index ?? 0) + 1,
+            raw: match[0],
+          });
+        }
       }
     }
   }

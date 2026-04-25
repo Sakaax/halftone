@@ -9,14 +9,13 @@ import "../styles/tokens.css";
     <title>Halftone site</title>
   </head>
   <body>
-    <!-- slot:hero -->
+    <section data-slot="hero"></section>
 
     <main id="main-content">
       <section class="manifesto"></section>
+      <section data-slot="primary-motion"></section>
     </main>
 
-    <!-- slot:primary-motion -->
-
-    <!-- slot:footer -->
+    <section data-slot="footer"></section>
   </body>
 </html>

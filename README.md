@@ -8,7 +8,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/license-AGPL--3.0-1A1612?style=flat-square&labelColor=EAE7E0" alt="AGPL-3.0">
-  <img src="https://img.shields.io/badge/version-v0.1.0-EAE7E0?style=flat-square&labelColor=1A1612" alt="v0.1.0">
+  <img src="https://img.shields.io/badge/version-v0.2.0-EAE7E0?style=flat-square&labelColor=1A1612" alt="v0.2.0">
   <a href="https://github.com/Sakaax/halftone/actions"><img src="https://img.shields.io/github/actions/workflow/status/Sakaax/halftone/ci.yml?branch=main&style=flat-square&label=ci&labelColor=1A1612&color=6B645B" alt="CI"></a>
   <a href="https://halftone.sakaax.com"><img src="https://img.shields.io/badge/landing-halftone.sakaax.com-1A1612?style=flat-square&labelColor=EAE7E0" alt="Landing"></a>
 </p>
@@ -29,7 +29,7 @@
 
 Claude Code ships **shadcn-clean SaaS design** by default. Competent. Dead on arrival.
 
-Halftone forces Claude into a **design-director mode**. It runs a brief, generates three art directions, builds a moodboard, locks a direction, scaffolds from slot-based templates, then codes components under **continuously-enforced anti-AI-slop rules**.
+Halftone forces Claude into a **design-director mode**. It runs a brief, generates three art directions, ships a **live HTML preview on `localhost:3737`** (full motion, no framework), then converts the validated preview to SvelteKit or Astro. Anti-AI-slop rules are **enforced on every preview save** by a PostToolUse hook.
 
 The goal: push Claude toward the editorial, motion-rich, asymmetric craft that wins Awwwards — or at least stops embarrassing you in a studio pitch.
 
@@ -63,19 +63,19 @@ That's it. Halftone takes over from there.
 
 ## <sub><code>02 / WORKFLOW</code></sub><br>Six steps. Zero AI-slop.
 
-Halftone refuses to write code before you lock a direction. Period.
+Halftone refuses to write framework code until the user has validated a live HTML preview. Period.
 
-**`01`&nbsp;&nbsp;Brief** — 3 questions, hard cap. No *"describe your vision"*.
+**`01`&nbsp;&nbsp;Brief** — 3 questions: a one-word feeling, one site you love + one word for why, one non-negotiable constraint. Hard cap.
 
-**`02`&nbsp;&nbsp;Directions** — three art directions dispatched in parallel. You pick, or you get three new ones.
+**`02`&nbsp;&nbsp;Directions** — three art directions dispatched in parallel. You pick one.
 
-**`03`&nbsp;&nbsp;Moodboard** — six images from `img-pilot`, or curated SVG fallbacks. Always shipped.
+**`03`&nbsp;&nbsp;Preview** — full-motion vanilla HTML/CSS/JS in `halftone/preview/`, served on `localhost:3737`. GSAP + Lenis from CDN. You iterate in plain language. A **PostToolUse hook** blocks banned fonts / gradients / Tailwind defaults on every save.
 
-**`04`&nbsp;&nbsp;Lock** — `direction.md` committed. Now — and only now — code starts.
+**`04`&nbsp;&nbsp;Framework choice** — once the preview is good, pick SvelteKit or Astro. Halftone surfaces a recommendation per direction.
 
-**`05`&nbsp;&nbsp;Scaffold** — slot-based composition. SvelteKit or Astro.
+**`05`&nbsp;&nbsp;Convert** — mechanical mapping: each `data-slot` becomes a component, each `initX()` moves verbatim into `onMount` (Svelte) or `<script>` (Astro). Lenis goes to the root layout, GSAP/Lenis switch from CDN to npm.
 
-**`06`&nbsp;&nbsp;Code** — motion + typography + audit. Anti-slop rules re-read on every file write.
+**`06`&nbsp;&nbsp;Code** — framework-specific additions (routing, forms, dynamic meta, sitemap), motion polish, typography, audits.
 
 ![](.github/rule.svg)
 
@@ -283,9 +283,10 @@ Full threat model → [`SECURITY.md`](SECURITY.md)
 ## <sub><code>10 / COMMANDS</code></sub><br>Full reference.
 
 ```
-/halftone                     Start the full director workflow
+/halftone                     Start the full director workflow (v0.2)
 /halftone direction           Re-generate 3 fresh art directions
-/halftone moodboard           Re-run moodboard for current direction
+/halftone preview             Re-launch the localhost:3737 preview server
+/halftone convert             Convert validated preview to chosen framework
 /halftone audit               Static audit (responsive + a11y)
 /halftone audit --deep        Full audit with Playwright + axe-core
 /halftone mood list           List 7 curated moods
@@ -305,7 +306,10 @@ No. AGPL-3.0 covers Halftone's plugin source only. Your generated sites can use 
 No. Next.js is banned explicitly. SvelteKit + Astro only. No plans to add Next.js.
 
 **Video / animations?**
-Not in v0.1. No Runway/Kling/ffmpeg integration. v2+ consideration.
+Not in v0.2. No Runway/Kling/ffmpeg integration. v0.3+ consideration.
+
+**Where did the moodboard step go?**
+Removed in v0.2. The live HTML preview on `localhost:3737` replaces it with a stronger signal — full visual + motion design instead of 6 static images. The 42 fallback SVGs and `moods/` catalog are kept in repo for future pattern extensions but are no longer part of the default flow. See `MIGRATION-v0.1-to-v0.2.md`.
 
 **What if `img-pilot` isn't installed?**
 Halftone runs end-to-end on 42 curated SVG fallbacks. Full generated site, placeholder moodboards instead of AI-generated ones.

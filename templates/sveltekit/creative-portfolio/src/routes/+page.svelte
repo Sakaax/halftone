@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </svelte:head>
 
-<!-- slot:hero -->
+<div data-slot="transition" aria-hidden="true"></div>
 
-<!-- slot:transition -->
+<section data-slot="hero"></section>
 
 <main id="main-content">
   <section class="manifesto">
@@ -19,8 +19,8 @@
   <section class="projects">
     <!-- project grid -->
   </section>
+
+  <section data-slot="primary-motion"></section>
 </main>
 
-<!-- slot:primary-motion -->
-
-<!-- slot:footer -->
+<section data-slot="footer"></section>

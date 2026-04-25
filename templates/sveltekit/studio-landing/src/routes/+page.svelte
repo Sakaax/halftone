@@ -7,14 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </svelte:head>
 
-<!-- slot:hero -->
+<section data-slot="hero"></section>
 
 <main id="main-content">
   <section class="manifesto">
     <!-- user content -->
   </section>
+  <section data-slot="primary-motion"></section>
 </main>
 
-<!-- slot:primary-motion -->
-
-<!-- slot:footer -->
+<section data-slot="footer"></section>

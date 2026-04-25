@@ -1,7 +1,7 @@
 {
   "name": "halftone",
-  "version": "0.1.0",
-  "description": "The Claude Code plugin for award-tier expressive web design. No shadcn. No Inter. No purple gradients.",
+  "version": "0.2.0",
+  "description": "The Claude Code plugin for award-tier expressive web design. v0.2: live HTML preview before framework, PostToolUse anti-slop hook, mechanical preview→SvelteKit/Astro conversion. No shadcn. No Inter. No purple gradients.",
   "type": "module",
   "main": "dist/index.js",
   "bin": {
