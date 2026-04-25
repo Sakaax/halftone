@@ -59,6 +59,15 @@ The goal: push Claude toward the editorial, motion-rich, asymmetric craft that w
 
 That's it. Halftone takes over from there.
 
+> **Already on an older version?** Pull the latest from the marketplace:
+>
+> ```
+> /plugin marketplace update halftone
+> /plugin update halftone@halftone
+> ```
+>
+> Then `/reload-plugins` or restart your Claude Code session to load the new files. Verify under `~/.claude/plugins/cache/halftone/halftone/<version>/`.
+
 ![](.github/rule.svg)
 
 ## <sub><code>02 / WORKFLOW</code></sub><br>Six steps. Zero AI-slop.
